@@ -1,6 +1,6 @@
-# empathy-search
+# mpthYFY
 
-Please ensure your local environmet is running on port 8080 in order to get the Spotify API working correctly. In case you want to use another port, you migth want to create an Spotify Application and get your own clientId, then replace it in the spotify-api.js file.
+Please ensure your local environment is running on port 8080 in order to get the Spotify API working correctly. In case you want to use another port, you migth want to create an Spotify Application and get your own clientId, then replace it in the spotify-api.js file.
 
 Remember to whitelist your localhost path with your port in the Spotify Application dashboard.
 
@@ -17,16 +17,6 @@ yarn run serve
 ### Compiles and minifies for production
 ```
 yarn run build
-```
-
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
 ```
 
 ### Customize configuration
