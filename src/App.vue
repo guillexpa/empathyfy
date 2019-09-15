@@ -1,17 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Searcher v-bind:token="token" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Searcher from './components/Searcher.vue'
+import ResultList from './components/ResultList.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Searcher,
+    ResultList
+  },
+  data(){
+    return {
+      results: [],
+      token: ''
+    }
+  },
+  created(){
+    let hasToken = window.location.href.split('/#access_token=')[1]
+    this.token = hasToken && hasToken.split('&')[0] || '';
+    if(this.token === ''){
+      window.location.href = 'https://accounts.spotify.com/authorize?client_id=a69257f142c64a2ebfebfe9a14b2ba1d&redirect_uri=http://localhost:8080/&response_type=token';
+    }
   }
 }
 </script>
@@ -23,6 +37,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
